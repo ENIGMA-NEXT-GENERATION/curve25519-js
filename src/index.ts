@@ -1748,6 +1748,10 @@ function crypto_sign_open(m: any, sm: any, n: any, pk: any) {
   return mlen;
 }
 
+export function crypto_sign_curve25519_pk_to_ed25519(pk: any) {
+  return convertPublicKey(pk)
+}
+
 // Converts Curve25519 public key back to Ed25519 public key.
 // edwardsY = (montgomeryX - 1) / (montgomeryX + 1)
 function convertPublicKey(pk: any) {
